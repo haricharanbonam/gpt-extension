@@ -1,0 +1,110 @@
+/* Hashtag Dropdown Styles */
+.hashtag-dropdown {
+  position: fixed;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10000;
+  min-width: 400px;
+  display: none;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hashtag-dropdown {
+    background: #2d2d2d;
+    border-color: #4b5563;
+  }
+}
+
+.template-list {
+  padding: 8px;
+}
+
+.template-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  transition: background-color 0.15s;
+}
+
+.template-item:hover,
+.template-item.selected {
+  background: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  .template-item:hover,
+  .template-item.selected {
+    background: #3f3f3f;
+  }
+}
+
+.template-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .template-name {
+    color: #60a5fa;
+  }
+}
+
+.template-preview {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@media (prefers-color-scheme: dark) {
+  .template-preview {
+    color: #9ca3af;
+  }
+}
+
+/* PDF button styles - match ChatGPT's existing buttons */
+.pdf-download-btn {
+  /* Inherits from ChatGPT's button classes */
+}
+
+/* Scrollbar for dropdown */
+.hashtag-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hashtag-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hashtag-dropdown::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.hashtag-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hashtag-dropdown::-webkit-scrollbar-thumb {
+    background: #4b5563;
+  }
+  
+  .hashtag-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+}
