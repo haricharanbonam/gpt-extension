@@ -108,3 +108,248 @@
     background: #6b7280;
   }
 }
+
+/* Header Styles */
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 12px 12px 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dropdown-header {
+    background: #373737;
+    border-color: #4b5563;
+  }
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-title {
+    color: #e5e7eb;
+  }
+}
+
+/* Icon Buttons */
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+@media (prefers-color-scheme: dark) {
+  .icon-btn {
+    color: #9ca3af;
+  }
+  .icon-btn:hover {
+    background: #4b5563;
+    color: #e5e7eb;
+  }
+}
+
+/* Template Item Layout
+   Note: .template-item is already flex column in original CSS. We need to change it.
+*/
+.template-item {
+  display: flex; /* Override flex-direction: column from original? No, original was column. */
+  flex-direction: row; /* FORCE row */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px; /* Keep existing padding */
+}
+
+.item-content {
+  flex: 1;
+  overflow: hidden;
+  margin-right: 8px;
+  display: flex;
+  flex-direction: column; /* Name and preview stacked */
+}
+
+.item-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.template-item:hover .item-actions {
+  opacity: 1;
+}
+
+/* Modal Styles */
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+}
+
+.custom-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-modal {
+    background: #2d2d2d;
+    border: 1px solid #4b5563;
+  }
+}
+
+.modal-header {
+  padding: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .modal-header {
+    border-color: #4b5563;
+    color: #fff;
+  }
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+@media (prefers-color-scheme: dark) {
+  .input-group label {
+    color: #d1d5db;
+  }
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: #000;
+  box-sizing: border-box; 
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .input-group input,
+  .input-group textarea {
+    background: #3f3f3f;
+    border-color: #4b5563;
+    color: #fff;
+  }
+}
+
+.modal-footer {
+  padding: 12px 16px;
+  background: #f9fafb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .modal-footer {
+    background: #373737;
+    border-color: #4b5563;
+  }
+}
+
+.modal-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.cancel-btn {
+  background: #fff;
+  border-color: #d1d5db;
+  color: #374151;
+}
+
+.cancel-btn:hover {
+  background: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cancel-btn {
+    background: #3f3f3f;
+    border-color: #4b5563;
+    color: #fff;
+  }
+  .cancel-btn:hover {
+    background: #4b5563;
+  }
+}
+
+.save-btn {
+  background: #10a37f; /* ChatGPT Green */
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #0d8a6a;
+}
